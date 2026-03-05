@@ -1,21 +1,53 @@
-# Jira MCP Server (Dockerized + MCP CLI Ready)
+# Installation
 
-## 1. Create `.env` file
+## Create `.env` file
 
 JIRA_BASE_URL=https://yourcompany.atlassian.net
 JIRA_EMAIL=your-email@company.com
 JIRA_API_TOKEN=your_api_token_here
 
-## 2. Start
+## Create a virtual environment 
+```
+cd PROJECT_FOLDER
+python3 -m venv .venv
+```
 
-docker compose up --build
+## Activate it
+```
+source .venv/bin/activate
+```
 
-## 3. MCP CLI Integration
+## Install dependencies
+```
+pip install fastmcp requests python-dotenv
+```
 
-Open `mcp-config.json` and replace:
+## Freeze the requirements
+```
+pip freeze > requirements.txt
+```
 
-/ABSOLUTE/PATH/TO/jira-mcp
+## Test it
+```
+python3 server.py
+```
 
-with the real absolute path.
+You should see
 
-Merge into your MCP config and restart your MCP app.
+`Starting MCP server 'jira-mcp-server' with transport 'stdio'`
+
+# Configure OpenCode
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "jira": {
+      "type": "local",
+       "command": [
+	       "PATH_TO_YOUR_MCP_PROJECT/.venv/bin/python",
+	       "PATH_TO_YOUR_MCP_PROJECT/server.py"
+      ],
+      "enabled": true
+    }
+  }
+}
