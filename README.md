@@ -2,9 +2,11 @@
 
 ## Create `.env` file
 
+```
 JIRA_BASE_URL=https://yourcompany.atlassian.net
 JIRA_EMAIL=your-email@company.com
 JIRA_API_TOKEN=your_api_token_here
+```
 
 ## Create a virtual environment 
 ```
