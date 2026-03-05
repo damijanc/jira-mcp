@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  jira-mcp:
+    build: .
+    container_name: jira-mcp
+    env_file:
+      - .env
+    restart: unless-stopped

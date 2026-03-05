@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "jira": {
+      "command": "docker",
+      "args": ["compose", "up"],
+      "cwd": "/ABSOLUTE/PATH/TO/jira-mcp",
+      "env": {}
+    }
+  }
+}
