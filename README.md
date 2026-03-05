@@ -37,7 +37,7 @@ You should see
 `Starting MCP server 'jira-mcp-server' with transport 'stdio'`
 
 # Configure OpenCode
-
+```
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
@@ -51,3 +51,4 @@ You should see
     }
   }
 }
+```
