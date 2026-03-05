@@ -6,5 +6,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY server.py .
+COPY .env .
+
+ENV MCP_MODE=http
+
+EXPOSE 8000
 
 CMD ["python", "server.py"]
